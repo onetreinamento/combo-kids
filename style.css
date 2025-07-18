@@ -6,35 +6,31 @@
 }
 
 :root {
-    --primary-blue: #4A90E2;
-    --secondary-blue: #357ABD;
-    --light-blue: #E8F4FD;
+    --primary-yellow: #FFD700;
+    --secondary-yellow: #FFC107;
+    --light-yellow: #FFF9C4;
+    --primary-black: #1A1A1A;
+    --secondary-black: #2C2C2C;
+    --light-black: #3A3A3A;
+    --primary-turquoise: #00CED1;
+    --secondary-turquoise: #20B2AA;
+    --light-turquoise: #E0FFFF;
     --primary-orange: #FF8C42;
     --secondary-orange: #FF7A29;
     --light-orange: #FFF2E8;
-    --primary-green: #7ED321;
-    --secondary-green: #6BC91A;
-    --light-green: #F0FDE8;
-    --primary-purple: #9013FE;
-    --secondary-purple: #7B1FA2;
-    --light-purple: #F3E5F5;
-    --primary-red: #F5A623;
-    --secondary-red: #E89611;
-    --light-red: #FFF8E1;
     --white: #FFFFFF;
-    --gray-light: #F8F9FA;
+    --gray-light: #F0F0F0;
     --gray-medium: #E9ECEF;
     --gray-dark: #6C757D;
-    --dark-blue: #2C3E50;
     --success: #28A745;
-    --shadow: rgba(74, 144, 226, 0.15);
-    --shadow-dark: rgba(44, 62, 80, 0.2);
+    --shadow: rgba(255, 215, 0, 0.15);
+    --shadow-dark: rgba(26, 26, 26, 0.2);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--dark-blue);
+    color: var(--primary-black);
     overflow-x: hidden;
 }
 
@@ -71,14 +67,14 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--dark-blue);
+    color: var(--primary-black);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: var(--primary-blue);
+    color: var(--primary-yellow);
 }
 
 .nav-link::after {
@@ -88,7 +84,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-blue);
+    background: var(--primary-yellow);
     transition: width 0.3s ease;
 }
 
@@ -105,7 +101,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 50%, var(--primary-purple) 100%);
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 50%, var(--primary-black) 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -183,7 +179,7 @@ body {
 }
 
 .hero-title .highlight {
-    color: var(--primary-orange);
+    color: var(--primary-turquoise);
     text-shadow: 2px 2px 4px var(--shadow-dark);
 }
 
@@ -216,11 +212,11 @@ body {
     border-radius: 25px;
     font-weight: 500;
     box-shadow: 0 4px 15px var(--shadow);
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .feature-item i {
-    color: var(--primary-blue);
+    color: var(--primary-yellow);
     font-size: 1.1rem;
 }
 
@@ -235,8 +231,8 @@ body {
     align-items: center;
     gap: 12px;
     padding: 18px 35px;
-    background: var(--primary-orange);
-    color: var(--white);
+    background: var(--primary-yellow);
+    color: var(--primary-black);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
@@ -248,7 +244,7 @@ body {
 }
 
 .cta-button:hover {
-    background: var(--secondary-orange);
+    background: var(--secondary-yellow);
     transform: translateY(-3px);
     box-shadow: 0 12px 35px var(--shadow-dark);
 }
@@ -272,7 +268,7 @@ body {
 }
 
 .urgency-text i {
-    color: #FF5722;
+    color: var(--primary-orange);
     animation: pulse 2s infinite;
 }
 
@@ -298,7 +294,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 25px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
     text-align: center;
 }
 
@@ -314,15 +310,15 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px;
-    background: var(--light-blue);
+    background: var(--light-yellow);
     border-radius: 12px;
     font-weight: 600;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .course-item i {
     font-size: 1.5rem;
-    color: var(--primary-blue);
+    color: var(--primary-turquoise);
 }
 
 .price-info {
@@ -332,7 +328,7 @@ body {
 }
 
 .duration, .age-range {
-    background: var(--primary-green);
+    background: var(--primary-turquoise);
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 600;
@@ -380,7 +376,7 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 10px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .illustration-content p {
@@ -398,11 +394,11 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .section-title .highlight {
-    color: var(--primary-blue);
+    color: var(--primary-yellow);
     text-shadow: 1px 1px 2px var(--shadow);
 }
 
@@ -443,7 +439,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+    background: linear-gradient(90deg, var(--primary-yellow), var(--primary-turquoise));
 }
 
 .benefit-card:hover {
@@ -454,7 +450,7 @@ body {
 .benefit-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    background: linear-gradient(135deg, var(--primary-yellow), var(--primary-turquoise));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -468,7 +464,7 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 15px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .benefit-card p {
@@ -501,7 +497,7 @@ body {
 }
 
 .course-header {
-    background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));
+    background: linear-gradient(135deg, var(--primary-yellow), var(--primary-orange));
     padding: 30px;
     text-align: center;
 }
@@ -516,7 +512,7 @@ body {
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 2rem;
-    color: var(--primary-orange);
+    color: var(--primary-black);
 }
 
 .course-header h3 {
@@ -554,7 +550,7 @@ body {
 /* Social Proof Section */
 .social-proof {
     padding: 100px 0;
-    background: var(--dark-blue);
+    background: var(--primary-black);
     color: var(--white);
 }
 
@@ -563,7 +559,7 @@ body {
 }
 
 .social-proof .section-title .highlight {
-    color: var(--primary-orange);
+    color: var(--primary-yellow);
 }
 
 .social-proof .section-subtitle {
@@ -654,7 +650,7 @@ body {
 .about-feature i {
     width: 50px;
     height: 50px;
-    background: var(--primary-green);
+    background: var(--primary-turquoise);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -667,7 +663,7 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 5px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .about-feature p {
@@ -692,7 +688,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .about-card p {
@@ -721,13 +717,13 @@ body {
 .info-item i {
     width: 50px;
     height: 50px;
-    background: var(--primary-purple);
+    background: var(--primary-yellow);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
-    color: var(--white);
+    color: var(--primary-black);
     flex-shrink: 0;
 }
 
@@ -735,7 +731,7 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 5px;
-    color: var(--dark-blue);
+    color: var(--primary-black);
 }
 
 .info-item p {
@@ -775,7 +771,7 @@ body {
 /* Final CTA Section */
 .final-cta {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-yellow));
     text-align: center;
 }
 
@@ -783,13 +779,13 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--white);
+    color: var(--primary-black);
 }
 
 .cta-content p {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: var(--white);
+    color: var(--primary-black);
 }
 
 .cta-info {
@@ -805,7 +801,7 @@ body {
     align-items: center;
     gap: 10px;
     font-weight: 600;
-    color: var(--white);
+    color: var(--primary-black);
 }
 
 .cta-feature i {
@@ -888,7 +884,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--primary-green);
+    color: var(--primary-yellow);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
