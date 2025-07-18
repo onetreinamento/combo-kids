@@ -854,8 +854,32 @@ body {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 0 20px; /* Adiciona padding para garantir espaço */
+        box-sizing: border-box; /* Garante que o padding não aumente a largura */
     }
     
+    .hero-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        /* Ajusta o tamanho e posicionamento das formas para mobile */
+        transform: scale(0.7); /* Reduz o tamanho das formas */
+        transform-origin: top right; /* Ajusta a origem da transformação */
+    }
+
+    .shape-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .shape-2 {
+        width: 150px;
+        height: 150px;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
