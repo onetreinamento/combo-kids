@@ -53,10 +53,10 @@ body {
     right: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-}play: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
+}
+
+.header .container {
+    display: flex;
 }
 
 .logo-img {
