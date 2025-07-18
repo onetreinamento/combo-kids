@@ -24,26 +24,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Mobile menu toggle (funcionalidade básica)
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const nav = document.querySelector('.nav');
-
-if (mobileMenuToggle && nav) {
-    mobileMenuToggle.addEventListener('click', function() {
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-        nav.style.position = 'absolute';
-        nav.style.top = '100%';
-        nav.style.left = '0';
-        nav.style.right = '0';
-        nav.style.background = '#FFFFFF';
-        nav.style.flexDirection = 'column';
-        nav.style.padding = '20px';
-        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        nav.style.borderRadius = '0 0 15px 15px';
-    });
-}
-
-// Animação de entrada para elementos quando entram na viewport
+// Animação de entrada para elementos
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -58,25 +39,30 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Aplicar animação aos cards e seções
+// Aplicar animação aos elementos quando a página carregar
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.benefit-card, .course-card, .about-card');
+    // Elementos para animar
+    const animatedElements = document.querySelectorAll(
+        '.benefit-card, .course-card, .gallery-item, .illustration-item, .about-card'
+    );
     
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // Aplicar animação específica para gallery-item
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    galleryItems.forEach(el => {
-        el.style.opacity = '1'; // Manter visível
-        el.style.transform = 'translateY(0)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
     });
 });
+
+// Mobile menu toggle (para futuras implementações)
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const nav = document.querySelector('.nav');
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+}
 
 // Efeito de hover nos botões CTA
 document.querySelectorAll('.cta-button').forEach(button => {
@@ -89,34 +75,25 @@ document.querySelectorAll('.cta-button').forEach(button => {
     });
 });
 
-// Contador animado (se necessário no futuro)
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
+// Contador de urgência (opcional)
+function updateUrgencyText() {
+    const urgencyElements = document.querySelectorAll('.urgency-text');
+    const messages = [
+        'Vagas limitadas! Garanta já a sua!',
+        'Últimas vagas disponíveis!',
+        'Não perca essa oportunidade!',
+        'Matrículas abertas por tempo limitado!'
+    ];
     
-    const timer = setInterval(() => {
-        start += increment;
-        element.textContent = Math.floor(start);
-        
-        if (start >= target) {
-            element.textContent = target;
-            clearInterval(timer);
+    urgencyElements.forEach(element => {
+        const textSpan = element.querySelector('span') || element.childNodes[2];
+        if (textSpan) {
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            textSpan.textContent = randomMessage;
         }
-    }, 16);
+    });
 }
 
-
-
-// Prevenção de spam no botão WhatsApp
-let lastClickTime = 0;
-document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const currentTime = Date.now();
-        if (currentTime - lastClickTime < 2000) {
-            e.preventDefault();
-            return false;
-        }
-        lastClickTime = currentTime;
-    });
-});
+// Atualizar texto de urgência a cada 10 segundos
+setInterval(updateUrgencyText, 10000);
 
