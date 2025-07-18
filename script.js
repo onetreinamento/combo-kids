@@ -105,28 +105,7 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Lazy loading para imagens
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.3s ease';
-                
-                img.onload = function() {
-                    this.style.opacity = '1';
-                };
-                
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-});
+
 
 // Prevenção de spam no botão WhatsApp
 let lastClickTime = 0;
